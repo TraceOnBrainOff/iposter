@@ -3,7 +3,7 @@ FROM python:3.11-slim
 WORKDIR /iposter
 
 #Installing required packages
-COPY ./packages.txt ./
+COPY packages.txt packages.txt
 RUN xargs sudo apt-get install <packages.txt
 
 #Creating virtual python env
@@ -12,9 +12,9 @@ RUN python3 -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 #Install packages to venv
-COPY ./requirements.txt ./
+COPY requirements.txt requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY ./src ./src
+COPY src src
 
 CMD ["python3", "src/main.py"]
