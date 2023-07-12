@@ -1,0 +1,13 @@
+version: "0.1"
+services:
+  iposter:
+    build: .
+    command: python3 src/main.py
+    volumes:
+      - .:/iposter
+    secrets:
+      - iposter_token
+
+secrets:
+  iposter_token:
+    file: /iposter/iposter_token.txt
