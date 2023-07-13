@@ -1,10 +1,11 @@
 version: "3.8"
 services:
   iposter:
+    image: iposter:latest
     build: .
     secrets:
       - iposter_token
 
 secrets:
   iposter_token:
-    file: /run/secrets/iposter_token
+    file: iposter_token.txt

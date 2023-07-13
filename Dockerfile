@@ -1,6 +1,6 @@
 FROM python:3.11-slim
 
-WORKDIR /iposter
+WORKDIR /usr/src/app
 
 #Installing required packages
 COPY ./packages.txt ./packages.txt
@@ -19,4 +19,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY src/ src/
 
-CMD ["python3" "src/main.py"]
+CMD ["python", "-u" ,"./src/main.py"]
