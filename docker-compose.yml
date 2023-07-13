@@ -2,7 +2,7 @@ version: "3.8"
 services:
   iposter:
     image: iposter:latest
-    build: .
+    restart: unless-stopped
     secrets:
       - iposter_token
 
